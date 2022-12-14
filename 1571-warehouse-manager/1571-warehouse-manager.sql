@@ -1,0 +1,1 @@
+SELECT warehouse.name AS warehouse_name, sum(warehouse.units * products.width * products.length * products.height) AS volume FROM warehouse JOIN products on warehouse.product_id = products.product_id GROUP BY warehouse.name;
