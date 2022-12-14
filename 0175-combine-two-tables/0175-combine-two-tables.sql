@@ -10,4 +10,4 @@
 
 
 #My code as below
-SELECT p.firstName, p.lastName, a.city, a.state FROM Person AS p left join Address AS a ON p.PERSONID = a.PERSONID;
+SELECT p.firstName, p.lastName, a.city, a.state FROM Person AS p left  join Address AS a ON p.PERSONID = a.PERSONID;
