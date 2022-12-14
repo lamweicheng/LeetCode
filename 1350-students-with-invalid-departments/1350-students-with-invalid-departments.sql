@@ -1,8 +1,6 @@
 # Write your MySQL query statement below
-SELECT id, name
-FROM Students s
-WHERE NOT EXISTS (
-    SELECT id
-    FROM Departments 
-    WHERE id = s.department_id
-)
+SELECT s.id, s.name
+FROM Departments d
+RIGHT JOIN Students s
+ON d.id = s.department_id
+WHERE d.id IS NULL
