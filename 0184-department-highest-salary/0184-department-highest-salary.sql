@@ -1,9 +1,7 @@
 # Write your MySQL query statement below
-SELECT d.Name AS Department, e.Name AS Employee, e.Salary FROM Employee AS e INNER JOIN Department AS d
-ON e.DepartmentId = d.Id
-INNER JOIN (SELECT MAX(Salary) AS Salary, DepartmentId
-FROM Employee
-GROUP BY DepartmentId
-) t
-on e.Salary = t.Salary
-where e.DepartmentId = t.DepartmentId;
+ SELECT D.Name as Department, E.Name as Employee, E.Salary 
+  FROM Department D, Employee E, Employee E2  
+  WHERE D.ID = E.DepartmentId and E.DepartmentId = E2.DepartmentId and 
+  E.Salary <= E2.Salary
+  group by D.ID,E.Name having count(distinct E2.Salary) = 1
+  order by D.Name desc
