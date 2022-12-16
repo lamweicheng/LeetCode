@@ -1,7 +1,5 @@
 # Write your MySQL query statement below
-select 
-    problem_id from Problems 
-where 
-    (likes/(likes+dislikes))*100 <60
-order by 
-    problem_id asc;
+SELECT problem_id 
+FROM Problems 
+WHERE (likes)/(likes + dislikes) <= 0.6
+ORDER BY problem_id ASC;
