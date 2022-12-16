@@ -1,5 +1,5 @@
 # Write your MySQL query statement below
-select
+SELECT
      product_id,
 sum(case when store ='store1' then price end) as store1,
 sum(case when store ='store2' then price end) as store2,
