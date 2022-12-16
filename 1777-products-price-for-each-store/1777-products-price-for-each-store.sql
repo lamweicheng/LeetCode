@@ -1,10 +1,7 @@
 # Write your MySQL query statement below
-SELECT
-     product_id,
-sum(case when store ='store1' then price end) as store1,
-sum(case when store ='store2' then price end) as store2,
-sum(case when store ='store3' then price end) as store3
-from 
-     Products
-group by
-   product_id;
+SELECT product_id,
+SUM(IF(store='store1', price, NULL)) AS store1,
+SUM(IF(store='store2', price, NULL)) AS store2,
+SUM(IF(store='store3', price, NULL)) AS store3
+FROM Products
+group by product_id
