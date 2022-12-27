@@ -1,11 +1,6 @@
 # Write your MySQL query statement below
 
-SELECT 
-    DISTINCT title 
-FROM Content 
-JOIN TVProgram
-    ON TVProgram.content_id = Content.content_id 
-    AND TVProgram.program_date BETWEEN "2020-06-01" AND "2020-06-30"
-    AND Content.Kids_content = 'Y'
-    AND Content.content_type = 'Movies'
-;
+select distinct title as TITLE
+from TVProgram t
+join content c on c.content_id = t.content_id
+where c.Kids_content = 'Y' and c.content_type = 'Movies' and t.program_date between '2020-06-01' and '2020-06-30'
