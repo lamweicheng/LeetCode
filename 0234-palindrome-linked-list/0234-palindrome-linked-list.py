@@ -7,7 +7,7 @@ class Solution:
     def isPalindrome(self, head: Optional[ListNode]) -> bool:
         res = ''
         while head:
-            res+= str(head.val)
+            res += str(head.val)
             head = head.next
             
         return res == res[::-1]
